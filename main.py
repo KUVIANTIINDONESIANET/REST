@@ -58,13 +58,11 @@ def textpro():
                 return result
             else:
                 return {
-                	'Owner': vinz
                     	'error': 'Themenya gada'
                 }
         else:
             return {
             	'Owner': vinz
-                'error': 'Themenya gada'
             }
     else:
         return {
