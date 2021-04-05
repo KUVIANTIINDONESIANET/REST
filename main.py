@@ -58,14 +58,17 @@ def textpro():
                 return result
             else:
                 return {
+                	'Owner': vinz
                     'error': 'Themenya gada'
                 }
         else:
             return {
+            	'Owner': vinz
                 'error': 'Themenya gada'
             }
     else:
         return {
+        	'Owner': vinz
             'msg': 'Masukkan parameter theme'
         }
 
@@ -95,6 +98,7 @@ def layer():
 			huhu = layer(hehe, 'black')
 			os.system('base64 result.jpg > pow.jpg')
 			return {
+				'Owner': vinz
 				'status': 200,
 				'result': '`data:image/jpg;base64,%s`' % open('pow.jpg').read()
 			}
@@ -102,11 +106,13 @@ def layer():
 			print(e)
 			#os.remove('piw.jpg')
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[!] Invalid base64 image!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
@@ -120,6 +126,7 @@ def spamgimel():
             jumlah = int(request.args.get('jum'))
             if jumlah > 10:
                 return {
+                	'Owner': vinz
                     'status': False,
                     'msg': '[!] Max 10 tod!'
                 }
@@ -136,6 +143,7 @@ def spamgimel():
                     hasil += '[!] Sukses\n'
                 server.quit()
                 return {
+                	'Owner': vinz
                     'status': 200,
                     'logs': hasil
                 }
@@ -143,16 +151,20 @@ def spamgimel():
                 print(e)
                 hasil = '[!] Gagal'
                 return {
+                	'Owner': vinz
+			'Owner': vinz,
                     'status': False,
                     'logs': hasil
                 }
         else:
             return {
+            	'Owner': vinz
                 'status': False,
                 'msg': 'Masukkan parameter jum'
             }
     else:
         return {
+        	'Owner': vinz
             'status': False,
             'msg': 'Masukkan parameter target'
         }
@@ -170,16 +182,19 @@ def spamcall():
             else:
                 hasil += '[!] Gagal mengirim spam call ke nomor : 62%s' % no
             return {
+            	'Owner': vinz
                 'status': 200,
                 'logs': hasil
             }
         else:
             return {
+            	'Owner': vinz
                 'status': False,
                 'msg': '[!] Tolong masukkan nomor dengan awalan 8'
             }
     else:
         return {
+        	'Owner': vinz
             'status': False,
             'msg': '[!] Masukkan parameter no' 
         }
@@ -190,6 +205,7 @@ def spamming():
             no = request.args.get('no')
             jum = int(request.args.get('jum'))
             if jum > 20: return {
+            	'Owner': vinz
                 'status': 200,
                 'msg': '[!] Max 20 ganteng'
             }
@@ -214,16 +230,19 @@ def spamming():
                 else:
                     hasil += '[!] Sukses\n'
             return {
+            	'Owner': vinz
                 'status': 200,
                 'logs': hasil
             }
         else:
             return {
+            	'Owner': vinz
                 'status': False,
                 'msg': '[!] Masukkin parameter jum juga ganteng'
             }
     else:
         return {
+        	'Owner': vinz
             'status': False,
             'msg': '[!] Masukkan parameter no'
         }
@@ -236,16 +255,19 @@ def noolees():
             for i in nulis:
                 i.save('resolt.jpg')
             return {
+            	'Owner': vinz
                 'status': 200,
                 'result': ''
             }
         except:
             return {
+            	'Owner': vinz
                 'status': False,
                 'error': 'Failed writing dude:('
             }
     else:
         return {
+        	'Owner': vinz
             'status': False,
             'msg': '[!] Masukkan parameter text'
         }
@@ -261,17 +283,20 @@ def wikipedia():
 			hueh = re.findall(r'(\d+)', str(heuh_))
 			result = heuh_[hueh[0]]['extract']
 			return {
+				'Owner': vinz
 				'status': 200,
 				'result': result
 			}
 		except Exception as e:
 			print(e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Yang anda cari tidak bisa saya temukan di wikipedia!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan param q'
 		}
@@ -284,6 +309,7 @@ def tts():
 			print(teks)
 			if int(len(teks)) - int(len(teks.split(' '))) == 250:
 				return {
+					'Owner': vinz
 					'status': 200,
 					'msg': '[❗] Maaf teks terlalu panjang!!',
 				}
@@ -294,6 +320,7 @@ def tts():
 					Tts = get(f'{url}{apiKey}').content
 					open('tts/tts.mp3','wb').write(Tts)
 					return {
+						'Owner': vinz
 						'status': 200,
 						'msg': 'Success convert text to speech!',
 						'file': 'https://tobz-api.herokuapp.com/tts/tts.mp3'
@@ -302,6 +329,7 @@ def tts():
 					Tts = get(f'{url}{apiKey}').content
 					open('tts/tts.mp3','wb').write(Tts)
 					return {
+						'Owner': vinz
 						'status': 200,
 						'msg': 'Success convert text to speech!',
 						'file': 'https://tobz-api.herokuapp.com/tts/tts.mp3'
@@ -309,11 +337,13 @@ def tts():
 		except Exception as e:
 			print(e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'msg': '[!] Upss, terjadi kesalahan'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': 200,
 			'msg': '[!] Masukkan parameter text'
 		}
@@ -331,6 +361,7 @@ def ytv():
 			title = bs(ytv['result'], 'html.parser').find('b').text
 			dl_link = bs(post('https://www.y2mate.com/mates/en60/convert',data={'type':url.split('/')[2],'_id':id[0],'v_id':url.split('/')[3],'ajax':'1','token':'','ftype':'mp4','fquality':'360p'}).json()['result'],'html.parser').find('a')['href']
 			return {
+				'Owner': vinz
 				'status': 200,
 				'title': title,
 				'thumb': thumb,
@@ -342,11 +373,13 @@ def ytv():
 		except Exception as e:
 			print('Error : %s ' % e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Terjadi kesalahan, mungkin link yang anda kirim tidak valid!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': 'Masukkan parameter url'
 		}
@@ -364,6 +397,7 @@ def yta():
 			title = bs(yta['result'], 'html.parser').find('b').text
 			dl_link = bs(post('https://www.y2mate.com/mates/en60/convert',data={'type':url.split('/')[2],'_id':id[0],'v_id':url.split('/')[3],'ajax':'1','token':'','ftype':'mp3','fquality':'128'}).json()['result'],'html.parser').find('a')['href']
 			return {
+				'Owner': vinz
 				'status': 200,
 				'title': title,
 				'thumb': thumb,
@@ -374,11 +408,13 @@ def yta():
 		except Exception as e:
 			print('Error : %s' % e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Terjadi kesalahan mungkin link yang anda kirim tidak valid!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter url'
 		}
@@ -392,17 +428,20 @@ def chord():
 			chord = get('http://app.chordindonesia.com/?json=get_post&id=%s' % id).json()
 			result = html_text.parse_html(chord['post']['content']).text_content()
 			return {
+				'Owner': vinz
 				'status': 200,
 				'result': result
 			}
 		except Exception as e:
 			print(e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf chord yang anda cari tidak dapat saya temukan!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter q'
 		}
@@ -416,6 +455,7 @@ def dewabatch():
 			dewabatch=cari(he)
 			if he != '':
 				return {
+					'Owner': vinz
 					'status': 200,
 					'sinopsis': dewabatch['result'],
 					'thumb': dewabatch['cover'],
@@ -424,11 +464,13 @@ def dewabatch():
 		except Exception as e:
 			print(e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': 'Anime %s Tidak di temukan!' % unquote(q)
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter q'
 		}
@@ -442,6 +484,7 @@ def komiku():
             if 'Tidak di temukan' not in komi:
                 manga = scrap_komiku(komi)
                 return {
+                	'Owner': vinz
                     'status': 200,
                     'info': manga['info'],
                     'genre': manga['genre'],
@@ -452,11 +495,13 @@ def komiku():
         except Exception as e:
             print(e)
             return {
+            	'Owner': vinz
                 'status': False,
                 'error': 'Manga %s Tidak di temukan' % unquote(q)
             }
     else:
         return {
+        	'Owner': vinz
             'status': False,
             'msg': '[!] Masukkan parameter q'
         }
@@ -470,6 +515,7 @@ def kusonime():
 			kuso=scrap_kusonime(he)
 			if he != '':
 				return {
+					'Owner': vinz
 					'status': 200,
 					'sinopsis': kuso['sinopsis'],
 					'thumb': kuso['thumb'],
@@ -480,11 +526,13 @@ def kusonime():
 		except Exception as e:
 			print(e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': 'Anime %s Tidak di temukan' % unquote(q)
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter q'
 		}
@@ -498,6 +546,7 @@ def otakudesuu():
             if he != '':
                 otaku=scrap_otakudesu(he)
                 return {
+                	'Owner': vinz
                     'status': 200,
                     'sinopsis': otaku['sinopsis'],
                     'thumb': otaku['thumb'],
@@ -507,11 +556,13 @@ def otakudesuu():
         except Exception as e:
             print(e)
             return {
+            	'Owner': vinz
                 'status': False,
                 'error': 'Anime %s Tidak di temukan' % unquote(q)
             }
     else:
         return {
+        	'Owner': vinz
             'status': False,
             'msg': '[!] Masukkan parameter q'
         }
@@ -523,17 +574,20 @@ def brainly_scraper():
 			query = request.args.get('q')
 			br=brainly(gsearch('"%s" site:brainly.co.id' % quote(query), lang='id')[0])
 			return {
+				'Owner': vinz
 				'status': 200,
 				'result': br
 			}
 		except Exception as e:
 			print(e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Pertanyaan %s tidak dapat saya temukan di brainly' % unquote(query)
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter q'
 		}
@@ -544,6 +598,7 @@ def nekonimek():
 		neko = get('https://waifu.pics/api/sfw/neko').json()
 		nimek = neko['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nimek
 		}
@@ -551,6 +606,7 @@ def nekonimek():
 		neko = get('https://waifu.pics/api/sfw/neko').json()
 		nimek = neko['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nimek
 		}
@@ -561,6 +617,7 @@ def crynime():
 		cryz = get('https://waifu.pics/api/sfw/cry').json()
 		ncry = cryz['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': ncry
 		}
@@ -568,6 +625,7 @@ def crynime():
 		cryz = get('https://waifu.pics/api/sfw/cry').json()
 		ncry = cryz['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': cryz
 		}
@@ -578,6 +636,7 @@ def kissnime():
 		rkiss = get('https://waifu.pics/api/sfw/kiss').json()
 		nkiss = rkiss['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nkiss
 		}
@@ -585,6 +644,7 @@ def kissnime():
 		rkiss = get('https://waifu.pics/api/sfw/kiss').json()
 		nkiss = rkiss['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nkiss
 		}
@@ -595,6 +655,7 @@ def hugnime():
 		hugz = get('https://waifu.pics/api/sfw/hug').json()
 		nhug = hugz['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nhug
 		}
@@ -602,6 +663,7 @@ def hugnime():
 		hugz = get('https://waifu.pics/api/sfw/hug').json()
 		nhug = hugz['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nhug
 		}
@@ -613,6 +675,7 @@ def randomanime():
 		nnimee = get('https://waifu.pics/api/sfw/%s' % random.choice(rnime)).json()
 		nimee = nnimee['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nimee
 		}
@@ -621,6 +684,7 @@ def randomanime():
 		nnimee = get('https://waifu.pics/api/sfw/%s' % random.choice(rnime)).json()
 		nimee = nnimee['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nimee
 		}
@@ -631,11 +695,13 @@ def randomloli():
 		hehe = ['kawaii','neko']
 		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': loli
 		}
 	except:
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': loli
 		}
@@ -646,11 +712,13 @@ def rmemes():
 		hehe = ['kawaii','neko']
 		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': loli
 		}
 	except:
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': loli
 		}
@@ -661,6 +729,7 @@ def blowjob():
 		nblow = get('https://waifu.pics/api/nsfw/blowjob').json()
 		bblow = nblow['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': bblow
 		}
@@ -668,6 +737,7 @@ def blowjob():
 		nblow = get('https://waifu.pics/api/nsfw/blowjob').json()
 		bblow = nblow['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': bblow
 		}
@@ -678,6 +748,7 @@ def hentaii():
 		nblow = get('https://waifu.pics/api/nsfw/waifu').json()
 		bblow = nblow['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': bblow
 		}
@@ -685,6 +756,7 @@ def hentaii():
 		nblow = get('https://waifu.pics/api/nsfw/waifu').json()
 		bblow = nblow['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': bblow
 		}
@@ -695,6 +767,7 @@ def nsfwneko():
 		nneko = get('https://waifu.pics/api/nsfw/neko').json()
 		nekko = nneko['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nekko
 		}
@@ -702,6 +775,7 @@ def nsfwneko():
 		nneko = get('https://waifu.pics/api/nsfw/neko').json()
 		nekko = nneko['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': nekko
 		}
@@ -712,6 +786,7 @@ def trapnime():
 		trap = get('https://waifu.pics/api/nsfw/trap').json()
 		ntrap = trap['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': ntrap
 		}
@@ -719,6 +794,7 @@ def trapnime():
 		trap = get('https://waifu.pics/api/nsfw/trap').json()
 		ntrap = trap['url']
 		return {
+			'Owner': vinz
 			'status': 200,
 			'result': ntrap
 		}
@@ -732,23 +808,27 @@ def igeh():
 			result = get('https://www.villahollanda.com/api.php?url=' + url).json()
 			if result['descriptionc'] == None:
 				return {
+					'Owner': vinz
 					'status': False,
 					'result': 'https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg',
 				}
 			else:
 				return {
+					'Owner': vinz
 					'status': 200,
 					'result': result['descriptionc'],
 				}
 		except Exception as e:
 			print(e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'result': 'https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg',
 				'error': True
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter url'
 		}
@@ -762,17 +842,20 @@ def ttpz():
 			ttp = get(link).json()
 			print(ttp)
 			return {
+				'Owner': vinz
 				'status': 200,
 				'base64': ttp['base64'],
 				'creator': 'Tobz'
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Text yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter text'
 		}
@@ -786,6 +869,7 @@ def zfb():
 			fb = get(link).json()
 			print(fb)
 			return {
+				'Owner': vinz
 				'status': 200,
 				'creator': 'Tobz',
 				'result':{
@@ -795,11 +879,13 @@ def zfb():
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Url yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter url'
 		}
@@ -813,17 +899,20 @@ def artin():
 			art = get(link).json()
 			print(art)
 			return {
+				'Owner': vinz
 				'status': 200,
 				'result': art['result'],
 				'creator': 'Tobz'
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Text yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter text'
 		}
@@ -835,17 +924,20 @@ def kbbz():
 			query = request.args.get('kata')
 			url = get('https://mnazria.herokuapp.com/api/kbbi?search={}'.format(query)).json()['result']
 			return {
+				'Owner': vinz
 				'status': 200,
 				'result': url,
 				'creator': 'Tobz'
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Kata yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter kata'
 		}
@@ -859,6 +951,7 @@ def jshalat():
 			hslt = get(url).json()
 			print(hslt)
 			return {
+				'Owner': vinz
 				'status': 200,
 				'creator': 'Tobz',
 				'result':{
@@ -875,11 +968,13 @@ def jshalat():
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Daerah yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter daerah'
 		}
@@ -893,6 +988,7 @@ def zjoox():
 			rsp = get(url).json()
 			print(rsp)
 			return {
+				'Owner': vinz
 				'status': 200,
 				'creator': 'Tobz',
 				'result':{
@@ -905,11 +1001,13 @@ def zjoox():
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Query yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter q'
 		}
@@ -923,6 +1021,7 @@ def zlirik():
 			lrk = get(url).json()
 			print(lrk)
 			return {
+				'Owner': vinz
 				'status': 200,
 				'creator': 'Tobz',
 				'result':{
@@ -935,11 +1034,13 @@ def zlirik():
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Query yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter q'
 		}
@@ -953,17 +1054,20 @@ def simi():
 			sim = get(url).json()
 			print(sim)
 			return {
+				'Owner': vinz
 				'status': 200,
 				'result': sim['success'],
 				'creator': 'Tobz'
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Text yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter text'
 		}
@@ -977,6 +1081,7 @@ def zcuaca():
 			cuc = get(url).json()
 			print(sim)
 			return {
+				'Owner': vinz
 				'status': 200,
 				'creator': 'Tobz',
 				'kota': cuc[0]['Kota'],
@@ -987,11 +1092,13 @@ def zcuaca():
 			}
 		except:
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Maaf, Text yang anda masukan salah!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter text'
 		}
@@ -1005,6 +1112,7 @@ def short():
             data = url.text
             print(data)
             return {
+            	'Owner': vinz
             	'status': 200,
 	            'creator':'Tobz',
 	            'result': data
@@ -1012,11 +1120,13 @@ def short():
         except Exception as e:
             print(e)
             return {
+            	'Owner': vinz
                 'status': False,
                 'error': 'Url %s Tidak di temukan!' % unquote(query)
             }
     else:
         return {
+        	'Owner': vinz
             'status': False,
             'msg': 'input parameter url'
         }
@@ -1036,6 +1146,7 @@ def zneonime():
                 image = "{}".format(str(Tobz.find('img')['data-src'])).replace(' ',"")
                 hasil = data.append({"title":title,"desc": desc,"image":image,"link":link})
             return {
+            	'Owner': vinz
 				'status': 200,
 				'creator':'Tobz',
 				'result':data
@@ -1043,11 +1154,13 @@ def zneonime():
         except Exception as e:
             print(e)
             return {
+            	'Owner': vinz
                 'status': False,
                 'error': 'Anime %s Tidak di temukan!' % unquote(query)
             }
     else:
         return {
+        	'Owner': vinz
             'status': False,
             'msg': 'input parameter q'
         }
@@ -1061,6 +1174,7 @@ def stalk():
 			igestalk_ = igestalk.findAll('span')
 			thumb = igestalk.find('img')['src']
 			return {
+				'Owner': vinz
 				'status': 200,
 				'Name': igestalk_[0].text.strip(),
 				'Username': igestalk_[1].text.strip(),
@@ -1073,11 +1187,13 @@ def stalk():
 		except Exception as e:
 			print(e)
 			return {
+				'Owner': vinz
 				'status': False,
 				'error': '[❗] Username salah!!'
 			}
 	else:
 		return {
+			'Owner': vinz
 			'status': False,
 			'msg': '[!] Masukkan parameter username'
 		}
@@ -1091,6 +1207,7 @@ def daerah():
 		hasil += '%s. %s\n' % (no, i)
 		no += 1
 	return {
+		'Owner': vinz
 		'status': 200,
 		'result': hasil
 	}
@@ -1103,6 +1220,7 @@ def waifu():
 	result = json.loads(bs(get(a['url']).text, 'html.parser').find('script', attrs={'type':'application/ld+json'}).string)
 	if result['gender'] == 'female':
 		return {
+			'Owner': vinz
 			'status': 200,
 			'name': result['name'],
 			'desc': desc,
@@ -1111,6 +1229,7 @@ def waifu():
 		}
 	else:
 		return {
+			'Owner': vinz
 			'status': 200,
 			'name': '%s (husbu)' % result['name'],
 			'desc': desc,
@@ -1124,6 +1243,7 @@ def infogempa():
 	em = be.findAll('li')
 	img = be.find('a')['href']
 	return {
+		'Owner': vinz
 		'status': 200,
 		'map': img,
 		'waktu': em[0].text,
@@ -1140,6 +1260,7 @@ def quotes():
 	result = random.choice(quotes_file)
 	print(result)
 	return {
+		'Owner': vinz
 		'status': 200,
 		'author': result['author'],
 		'quotes': result['quotes']
@@ -1150,6 +1271,7 @@ def quotesnimerandom():
 	quotesnime = get('https://animechanapi.xyz/api/quotes/random').json()['data'][0]
 	print(quotesnime)
 	return {
+		'Owner': vinz
 		'status': 200,
 		'data': {
 			'quote': quotesnime['quote'],
