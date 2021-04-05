@@ -1134,8 +1134,8 @@ def stalk():
 				'Name': igestalk_[0].text.strip(),
 				'Username': igestalk_[1].text.strip(),
 				'Jumlah_Post': igestalk_[2].text.replace('\n',' ').strip(),
-				'Jumlah_Followers': igestalk_[3].text.replace('\n',' ').strip(),
-				'Jumlah_Following': igestalk_[4].text.replace('\n',' ').strip(),
+				'Jumlah_Following': igestalk_[3].text.replace('\n',' ').strip(),
+				'Jumlah_Followers': igestalk_[4].text.replace('\n',' ').strip(),
 				'Biodata': igestalk.find('p').text.strip(),
 				'Profile_pic': thumb
 			}
