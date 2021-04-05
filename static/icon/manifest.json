@@ -1,7 +1,7 @@
 {
-    "name":"TOBZ API",
-    "short_name":"TOBZ API",
-    "description":"TOBZ APIs Documentation.",
+    "name":"VINZ API",
+    "short_name":"VINZ API",
+    "description":"VINZ APIs Documentation.",
     "theme_color":"transparent",
     "background_color":"transparent",
     "display":"standalone",
