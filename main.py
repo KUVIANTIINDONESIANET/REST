@@ -1013,7 +1013,29 @@ def simi():
 			'status': False,
 			'msg': '[!] Masukkan parameter text'
 		}
-
+	
+@app.route('/api/playmp3', methods=['GET','POST'])
+def simi():
+	if request.args.get('text'):
+		try:
+			query = request.args.get('text')
+			url = f'https://api.zeks.xyz/api/ytplaymp3?apikey=apivinz&q={query}'
+			sim = get(url).json()
+			print(sim)
+			return {
+				'status': 200,
+				'result': sim['success'],
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] Maaf, Text yang anda masukan salah!'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter text'
+		}
 @app.route('/api/cuaca', methods=['GET','POST'])
 def zcuaca():
 	if request.args.get('wilayah'):
