@@ -233,7 +233,7 @@ def spamming():
             'msg': '[!] Masukkan parameter no'
         }
 
-@app.route('/api/shorturl', methods=['GET','POST'])
+@app.route('/api/mp3', methods=['GET','POST'])
 def lagu():
     if request.args.get('teks'):
         try:
