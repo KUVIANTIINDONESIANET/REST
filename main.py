@@ -1020,7 +1020,7 @@ def play123():
 		try:
 			query = request.args.get('text')
 			url = f'https://api.zeks.xyz/api/ytplaymp3?apikey=apivinz&q={query}'
-			sim = get(url).json()
+			mp3 = get(url).json()
 			print(sim)
 			return {
 				'status': 200,
@@ -1221,7 +1221,7 @@ def quotes():
 
 @app.route('/api/quotesnime/random', methods=['GET','POST'])
 def quotesnimerandom():
-	quotesnime = get('https://animechanapi.xyz/api/quotes/random').json()['data'][0]
+	quotesnime = get('https://api.zeks.xyz/api/ytplaymp3?apikey=apivinz&q=jatuh%20jadi%20resah').json()['data'][0]
 	print(quotesnime)
 	return {
 		'status': 200,
