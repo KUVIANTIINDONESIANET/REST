@@ -1015,7 +1015,7 @@ def simi():
 		}
 	
 @app.route('/api/playmp3', methods=['GET','POST'])
-def simi():
+def play123():
 	if request.args.get('text'):
 		try:
 			query = request.args.get('text')
