@@ -233,6 +233,31 @@ def spamming():
             'msg': '[!] Masukkan parameter no'
         }
 
+@app.route('/api/shorturl', methods=['GET','POST'])
+def lagu():
+    if request.args.get('teks'):
+        try:
+            query = request.args.get('q')
+            url = requests.get("https://api.zeks.xyz/api/ytplaymp3?apikey=apivinz&q={}".format(query))
+            data = url.text
+            print(data)
+            return {
+            	'status': 200,
+            	'creator':'I Am Vinz',
+	            'result': data
+            }
+        except Exception as e:
+            print(e)
+            return {
+                'status': False,
+                'error': 'Url %s Tidak di temukan!' % unquote(query)
+            }
+    else:
+        return {
+            'status': False,
+            'msg': 'input parameter url'
+        }
+
 @app.route('/api/nulis', methods=['GET','POST'])
 def noolees():
     if request.args.get('text'):
