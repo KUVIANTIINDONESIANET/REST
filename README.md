@@ -1,4 +1,4 @@
-#  MhankBarBar-Api
+#  Vinz-Cognita-Api
 
 # Example
-• [Click here](https://mhankbarbar.herokuapp.com/api)
+• [Click here](https://vinzcognita-key.herokuapp.com/api)
