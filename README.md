@@ -1,4 +1,4 @@
-#  Vinz-Cognita-Api
+#  Kuvianti-Api
 
 # Example
-• [Click here](https://vinzcognita-key.herokuapp.com/api)
+• [Click here](https://kuv-api.herokuapp.com/api)
