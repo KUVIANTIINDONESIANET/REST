@@ -1,0 +1,6 @@
+---
+deployment:
+ tasks:
+  - export DEPLOYPATH=/home/mjlvarax/public_html/cloud
+  - /bin/cp index.html $DEPLOYPATH
+  - /bin/cp style.css $DEPLOYPATH
