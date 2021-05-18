@@ -795,7 +795,7 @@ def igeh():
 		try:
 			url = request.args.get('url')
 			data = {'id': url}
-			result = get('https://www.villahollanda.com/api.php?url=' + url).json()
+			result = get('https://videfikri.com/api/igdl/?url=' + url).json()
 			if result['descriptionc'] == None:
 				return {
 					'status': False,
